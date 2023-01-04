@@ -2,7 +2,7 @@ header {
 	width:100%; 
 	overflow:hidden; 
 	background:#000000;
-	margin-bottom:20px;
+	
 }
 
 .conteinerHeader {
@@ -64,5 +64,47 @@ header nav a:hover {
 .category:hover {
 	background:#725ba8;
 	border-radius:20px;
-	border: 15px;
+	
+}
+.main{
+	
+	display:flex;
+	justify-content: center;
+	background-image: url(/img/f9a98ff98167367f51f30db94eb85514.jpg);
+}
+
+.conteinerProduct{
+	display: flex;
+	justify-content: center;
+	gap:30px;
+	border-top: 10px;
+	
+}
+.product{
+	background-color: #0b2739;
+	color: aliceblue;
+	border-radius: 8px;
+	margin: 30px;
+}
+.buttonAgregar{
+	display: flex;
+	justify-content: center;
+	border-radius: 15px;
+	border-color: #ff008a;
+	background-color: #0b2739;
+	color: #fff;
+	width: 200px;
+    height: 38px;
+	margin-top: 15px;
+	
+}
+.buttonAgregar:hover {
+	box-shadow: 0 12px 16px 0 rgba(255, 249, 249, 0.24), 0 17px 50px 0 rgba(253, 253, 253, 0.19);
+  }
+.entradas{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 25px;
+
 }
