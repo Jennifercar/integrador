@@ -1,10 +1,25 @@
-<header>
-    <div class="conteinerHeader">
+<!DOCTYPE html>
+<html lang="en"><head>
+    
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="/bootstrap-5.2.3-dist/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+	<title>tu compra</title>
+</head>
+
+<body>
+<header class="headerCarrito">
+    <div class="conteinerHeaderCarrito">
         <img class="logo" src="/img/Gold Luxury Initial Circle Logo.png" alt="logoEmpresa" width="250" height="250">
+    </div>
+
+    <div class="carritoMenu">
 
         <nav>
             <a href="index.html">seguir comprando</a>
-            
+
             <a href="./carrito.html"><i class="bi bi-cart3"></i>Carrito</a>
 
         </nav>
@@ -25,7 +40,7 @@
 </section>
 
 
-<main>
+<main class="mainCarrito ">
     <h2> Carrito de compra</h2>
     <div class="conteinerCart">
         <p>Tu carrito se encuentra vacío por el momento</p>
@@ -33,27 +48,37 @@
             <div class="cartProduct">
                 <div>
                     <h3>Artista</h3>
-                <h2>Camilo</h2>
-            </div>
-            <div>
-                <h3>cantidad</h3>
-                <p>1</p>
-            </div>
+                    <p>Camilo</p>
+                </div>
+                <div>
+                    <h3>cantidad</h3>
+                    <p>1</p>
+                </div>
 
-            <div>
-                <h3>Precio</h3>
-                <p>$7500</p>
+                <div>
+                    <h3>Precio</h3>
+                    <p>$7500</p>
+                </div>
+                <div>
+                    <h3>subtotal</h3>
+                    <p>$7500</p>
+                </div>
+                <button><i class="bi bi-trash3"></i></button>
             </div>
-           <div>
-               <h3>subtotal</h3>
-                <p>$7500</p>
-           </div>
-
-           <button><i class="bi bi-trash3"></i></button>
-            </div>
-
         </div>
-
-
     </div>
+
+    <div id="carrito-acciones" class="carritoCompraYvaciar">
+        <div class="carrito-acciones-izquierda">
+            <button id="carrito-acciones-vaciar" class="carritoVaciar">Vaciar carrito</button>
+        </div>
+        <div class="carrito-acciones-derecha">
+            <div class="carriTotal">
+                <p class="Titulototal">Total:</p>
+                <p class="Titulototal" id="total">$3000</p>
+            </div>
+            <button id="carrito-acciones-comprar" class="carritoComprar">Comprar ahora</button>
+        </div>
+    </div>
+
 </main>
