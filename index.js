@@ -1,65 +1,87 @@
-import { productsData } from "./data.js";
-const products = document.querySelector(".products-container");
-const productsCart = document.querySelector(".cart-container");
-const total = document.querySelector(".total");
-const categories = document.querySelector(".categories");
-const categoriesList = document.querySelectorAll(".category");
-const btnLoad = document.querySelector(".btn-load");
-const buyBtn = document.querySelector(".btn-buy");
-const cartBubble = document.querySelector(".cart-bubble");
-const cartBtn = document.querySelector(".cart-label");
-const barsBtn = document.querySelector(".menu-label");
-const cartMenu = document.querySelector(".cart");
-const barsMenu = document.querySelector(".navbar-list");
-const overlay = document.querySelector(".overlay");
-const successModal = document.querySelector(".add-modal");
-const deleteBtn = document.querySelector(".btn-delete");
+'use strict'
 
-  // carrito
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const productsData = [
+  {
+    id: 1,
+    name: "Lali",
+    date: "4 de marzo",
+    category: "conciertos",
+    cardImg: "./img/imgProduct/Lali3DIC600.jpg",
+    precio:4500,
+  },
+  {
+    id: 2,
+    name: "Camilo",
+    date: "16 de marzo",
+    category: "conciertos",
+    cardImg: "./img/imgProduct/Camilo.jpg",
+    precio:7500,
+  },
+  {
+    id: 3,
+    name: "David Guetta",
+    date: "9 de febrero",
+    category: "conciertos",
+    cardImg: "./img/imgProduct/davidguetta.jpg",
+    precio:4500,
+  },
+  {
+    id: 4,
+    name: "Alejandro Sanz",
+    date: "21 de enero",
+    category: "conciertos",
+    cardImg: "./img/imgProduct/Sanz.jpg",
+    precio:8000,
+  },
+  {
+    id: 5,
+    name: "Reik",
+    date: "6 de marzo",
+    category: "conciertos",
+    cardImg: "./img/imgProduct/Reik.jpg",
+    precio:7500,
+  },
+  {
+    id: 6,
+    name: "Connie Ballarini",
+    date: "14 de febrero",
+    category: "teatro",
+    cardImg: "./img/imgProduct/connie.jpg",
+    precio:1500,
+  },
+  {
+    id: 7,
+    name: "La Granja",
+    date: "6 de marzo",
+    category: "teatro",
+    cardImg: "./img/imgProduct/lagranja.jpg",
+    precio:1000,
+  },
+];
 
-  const saveLocalStorage = (cartList) => {
-    localStorage.setItem("cart", JSON.stringify(cartList));
-  };
+const conteinerProducts = document.querySelector('.conteinerProducts');
 
-   const renderProduct = (product) => {
-    const { id, name, date,cardImg } = product;
-    return ` 
-    <div class="product">
-        <img src=${cardImg} alt=${name} />
-        <div class="product-info">
-            <div class="product-top">
-                <h3>${name}</h3>
-            </div>
-            <div class="product-mid">
-                <div class="product-user">
-                    <p>${date}</p>
-                </div>
-            </div>
-            <div class="product-bot">
-                    <button class="btn-add"
-                    data-id='${id}'
-                    data-name='${name}'
-                    data-img='${cardImg}'>Comprá tu entrada</button>
-                </div>
-            </div>
-        </div>
-    </div>`;
-  };
-  
+function renderproduct(selecProduct) {
 
-  const renderizarProduct = (product) => {
-    ultimaProduct=product;
-    saveLocalStorage();
-    productsCart.innerHTML =renderProduct(product);
-  };
+  conteinerProducts.innerHTML = "";
+
+  selecProduct.forEach(product => {
+
+    const div = document.createElement("div");
+
+    div.classList.add("product");
+
+    div.innerHTML = `
+
+          <img class="imgProduct" src="${product.cardImg}" alt="Reik">
+          <div class="entradas">
+          <h2>${product.name}</h2>
+          <h3>${product.date}</h3>
+          <button class="buttonAgregar" id="${product.id}">Agregar</button></div>
+			    </div>`
+
   
- 
-  
-  
-  const init = () => {
-    document.addEventListener("DOMContentLoaded", renderProduct);
-    renderizarProduct(ultimaProduct);
-  };
-  
-  init();
+        } );
+
+}
+renderproduct(productsData);
