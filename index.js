@@ -47,24 +47,99 @@ const productsData = [
     date: "14 de febrero",
     category: "teatro",
     cardImg: "./img/imgProduct/connie.jpg",
-    precio:1500,
+    precio:3000,
   },
   {
     id: 7,
     name: "La Granja",
-    date: "6 de marzo",
+    date: "4 Marzo",
     category: "teatro",
     cardImg: "./img/imgProduct/lagranja.jpg",
     precio:1000,
   },
+  {
+    id: 8,
+    name: "Alejandro Fernandez",
+    date: "6 de marzo",
+    category: "conciertos",
+    cardImg: "./img/imgProduct/385X250-2.jpg",
+    precio:6000,
+  },  
+  {
+    id: 9,
+    name: "Sabina",
+    date: "12 Marzo ",
+    category: "conciertos",
+    cardImg: "./img/imgProduct/Sabina_CTP_HOME-MOVISTAR-ARENA.jpg",
+    precio:5000,
+  },  
+  {
+    id: 10,
+    name: "Los Fabulosos Cadillacs",
+    date: "26 Mayo",
+    category: "conciertos",
+    cardImg: "./img/imgProduct/LFC.385x250-1.jpg",
+    precio:4000,
+  },
+  {
+    id: 11,
+    name: "Mi madre mi novia y yo",
+    date: "22 de enero",
+    category: "teatro",
+    cardImg: "./img/imgProduct/mi-madre-mi-novia-y-yo.jpg",
+    precio:2000,
+  },
+  {
+    id: 12,
+    name: "Convivencia obligada",
+    date: "26 de Marzo",
+    category: "teatro",
+    cardImg: "./img/imgProduct/convivencia-obligada.jpg",
+    precio:3000,
+  },
+  {
+    id: 13,
+    name: "El divorcio",
+    date: "9 de febrero",
+    category: "teatro",
+    cardImg: "./img/imgProduct/el-divorcio.jpg",
+    precio:3000,
+  },
+  {
+    id: 14,
+    name: "Parque lezama",
+    date: "19 de febrero",
+    category: "teatro",
+    cardImg: "./img/imgProduct/parque-lezama.jpg",
+    precio:2000,
+  },
+  {
+    id: 15,
+    name: "El trinche en mar del plata",
+    date: "29 de febrero",
+    category: "teatro",
+    cardImg: "./img/imgProduct/martin-dardik---el-trinche-en-mar-del-plata.jpg",
+    precio:2500,
+  },
+  {
+    id: 16,
+    name: "Male Guinzburg",
+    date: "15 de marzo",
+    category: "teatro",
+    cardImg: "./img/imgProduct/male-guinzburg---unipersonal.jpg",
+    precio:3000,
+  },
 ];
 
-const conteinerProducts = document.querySelector('.conteinerProducts');
+const conteinerProduct = document.querySelector('.conteinerProduct');
+//const buttonCategory = document.querySelectorAll('.buttonCategory');
+
+
 
 function renderproduct(selecProduct) {
 
-  conteinerProducts.innerHTML = "";
-
+  conteinerProduct.innerHTML = "";
+  
   selecProduct.forEach(product => {
 
     const div = document.createElement("div");
@@ -77,11 +152,31 @@ function renderproduct(selecProduct) {
           <div class="entradas">
           <h2>${product.name}</h2>
           <h3>${product.date}</h3>
+          <h3 class="precio">Precio: ${product.precio}</h3>
           <button class="buttonAgregar" id="${product.id}">Agregar</button></div>
 			    </div>`
 
+          conteinerProduct.append(div);
   
         } );
 
 }
 renderproduct(productsData);
+
+
+/*buttonCategory.forEach(button=> {
+  
+  button.addEventListener("click", (e)=>{
+   
+    botonesCategorias.forEach(boton => boton.classList.remove("active"));
+    e.currentTarget.classList.add("active");
+
+    if (e.currentTarget.id != "todos") {
+        const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
+        tituloPrincipal.innerText = productoCategoria.categoria.nombre;
+        const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
+        cargarProductos(productosBoton);
+    } 
+    
+  })
+})*/
