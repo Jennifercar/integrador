@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 header {
 	width:100%; 
 	overflow:hidden; 
@@ -41,22 +46,34 @@ header nav a:hover {
 	border-radius:50px;
 }
 
-.categories{
 
-	display:flex;
+#imagendecarrucel{
+	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+	background-image: url(./img/f9a98ff98167367f51f30db94eb85514.jpg);
+	
+}
+
+.category{
+	width: 100%;
+	display: flex;
 	justify-content: center;
+	align-items: center;
 	background-image: url(/img/f9a98ff98167367f51f30db94eb85514.jpg);
 	
 }
 .buttonCategory{
-	display:flex;
+
 	color:rgb(255, 255, 255);
-	justify-content: center;
 	border-radius: 12px;
 	background-color: #000000;
 	font-size:20px;
 	font-weight:bold;
-	margin: 50px;
+	margin: 5px;
 	-webkit-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
 	transition:all 500ms ease;
@@ -66,11 +83,19 @@ header nav a:hover {
 	border-radius:20px;
 	
 }
+.containerTitulo{
+	display: flex;
+	justify-content: center;
+	z-index: 1;
+	
 
+}
 .tituloEvento{
 	color: aliceblue;
-	font-size: 3em;
+	font-weight: 300;
 	margin-left: 1rem;
+	
+	
 }
 .main{
 	
@@ -83,6 +108,7 @@ header nav a:hover {
 .conteinerProduct{
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	flex-wrap: wrap;
 	gap:1rem;
 	border-top: 10px;
@@ -95,15 +121,26 @@ header nav a:hover {
 	margin: 30px;
 	flex-direction: row;
 	
+
+	
+}
+.tituloArtista{
+	font-weight: 500;
+	font-size: 30px;
+
 }
 .imgProduct{
-	width: 412px;
-	height: 287px;
+	width: 347px;
+	height: 222px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
+	display: flex;
+	
+	
 }
 .precio{
 	font-weight: 300;
+	font-size: 25px;
 }
 .buttonAgregar{
 	display: flex;
@@ -147,7 +184,7 @@ gap: 1rm;
 
 .cartProducts{
 	display: flex;
-	flex-diirection: column;
+	flex-direction: column;
 	gap: 1rem;
 	background-color: #051b28;
 }
@@ -225,3 +262,30 @@ align-items: center;
 	font-size: 20px;
 	color: #fff;
   }
+
+
+
+
+  @media (max-width: 534px) {
+    .imgProduct {
+        width: 250px;
+	height: 158px;
+	transition: all 400ms ease-out 0s;
+    }
+	}
+
+@media (max-width: 426px) {
+    .imgProduct {
+        width: 224px;
+	
+	transition: all 400ms ease-out 0s;
+    }
+	.buttonAgregar{
+		width: 168px;
+    
+
+
+}
+	
+
+}

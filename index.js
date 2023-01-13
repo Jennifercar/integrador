@@ -3,13 +3,13 @@
 const productsData = [
   {
     id: 1,
-    name: "Lali",
-    date: "4 de marzo",
+    name: "Sabina",
+    date: "12 Marzo ",
     category: { name:"Conciertos", 
                 id: "Conciertos",},
-    cardImg: "./img/imgProduct/Lali3DIC600.jpg",
-    precio:4500,
-  },
+    cardImg: "./img/imgProduct/Sabina_CTP_HOME-MOVISTAR-ARENA.jpg",
+    precio:5000,
+  },  
   {
     id: 2,
     name: "Camilo",
@@ -75,13 +75,14 @@ const productsData = [
   },  
   {
     id: 9,
-    name: "Sabina",
-    date: "12 Marzo ",
+    name: "Lali",
+    date: "4 de marzo",
     category: { name:"Conciertos", 
                 id: "Conciertos",},
-    cardImg: "./img/imgProduct/Sabina_CTP_HOME-MOVISTAR-ARENA.jpg",
-    precio:5000,
-  },  
+    cardImg: "./img/imgProduct/Lali3DIC600.jpg",
+    precio:4500,
+  },
+  
   {
     id: 10,
     name: "Los Fabulosos Cadillacs",
@@ -165,7 +166,7 @@ function renderproduct(selecProduct) {
 
     div.innerHTML = `
 
-          <img class="imgProduct" src="${product.cardImg}" alt="Reik">
+          <img class="imgProduct" src="${product.cardImg}" alt="${product.name}">
           <div class="entradas">
           <h2>${product.name}</h2>
           <h3>${product.date}</h3>
