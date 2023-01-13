@@ -5,7 +5,8 @@ const productsData = [
     id: 1,
     name: "Lali",
     date: "4 de marzo",
-    category: "conciertos",
+    category: { name:"Conciertos", 
+                id: "Conciertos",},
     cardImg: "./img/imgProduct/Lali3DIC600.jpg",
     precio:4500,
   },
@@ -13,7 +14,8 @@ const productsData = [
     id: 2,
     name: "Camilo",
     date: "16 de marzo",
-    category: "conciertos",
+    category: { name:"Conciertos", 
+                id: "Conciertos",},
     cardImg: "./img/imgProduct/Camilo.jpg",
     precio:7500,
   },
@@ -21,7 +23,8 @@ const productsData = [
     id: 3,
     name: "David Guetta",
     date: "9 de febrero",
-    category: "conciertos",
+    category: { name:"Conciertos", 
+                id: "Conciertos",},
     cardImg: "./img/imgProduct/davidguetta.jpg",
     precio:4500,
   },
@@ -29,7 +32,8 @@ const productsData = [
     id: 4,
     name: "Alejandro Sanz",
     date: "21 de enero",
-    category: "conciertos",
+    category: { name:"Conciertos", 
+                id: "Conciertos",},
     cardImg: "./img/imgProduct/Sanz.jpg",
     precio:8000,
   },
@@ -37,7 +41,8 @@ const productsData = [
     id: 5,
     name: "Reik",
     date: "6 de marzo",
-    category: "conciertos",
+    category: { name:"Conciertos", 
+                id: "Conciertos",},
     cardImg: "./img/imgProduct/Reik.jpg",
     precio:7500,
   },
@@ -45,7 +50,8 @@ const productsData = [
     id: 6,
     name: "Connie Ballarini",
     date: "14 de febrero",
-    category: "teatro",
+    category: { name:"Teatro", 
+                id: "Teatro",},
     cardImg: "./img/imgProduct/connie.jpg",
     precio:3000,
   },
@@ -53,7 +59,8 @@ const productsData = [
     id: 7,
     name: "La Granja",
     date: "4 Marzo",
-    category: "teatro",
+    category: { name:"Teatro", 
+                id: "Teatro",},
     cardImg: "./img/imgProduct/lagranja.jpg",
     precio:1000,
   },
@@ -61,7 +68,8 @@ const productsData = [
     id: 8,
     name: "Alejandro Fernandez",
     date: "6 de marzo",
-    category: "conciertos",
+    category: { name:"Conciertos", 
+                id: "Conciertos",},
     cardImg: "./img/imgProduct/385X250-2.jpg",
     precio:6000,
   },  
@@ -69,7 +77,8 @@ const productsData = [
     id: 9,
     name: "Sabina",
     date: "12 Marzo ",
-    category: "conciertos",
+    category: { name:"Conciertos", 
+                id: "Conciertos",},
     cardImg: "./img/imgProduct/Sabina_CTP_HOME-MOVISTAR-ARENA.jpg",
     precio:5000,
   },  
@@ -77,7 +86,8 @@ const productsData = [
     id: 10,
     name: "Los Fabulosos Cadillacs",
     date: "26 Mayo",
-    category: "conciertos",
+    category: { name:"Conciertos", 
+                id: "Conciertos",},
     cardImg: "./img/imgProduct/LFC.385x250-1.jpg",
     precio:4000,
   },
@@ -85,7 +95,8 @@ const productsData = [
     id: 11,
     name: "Mi madre mi novia y yo",
     date: "22 de enero",
-    category: "teatro",
+    category: { name:"Teatro", 
+                id: "Teatro",},
     cardImg: "./img/imgProduct/mi-madre-mi-novia-y-yo.jpg",
     precio:2000,
   },
@@ -93,7 +104,8 @@ const productsData = [
     id: 12,
     name: "Convivencia obligada",
     date: "26 de Marzo",
-    category: "teatro",
+    category: { name:"Teatro", 
+                id: "Teatro",},
     cardImg: "./img/imgProduct/convivencia-obligada.jpg",
     precio:3000,
   },
@@ -101,7 +113,8 @@ const productsData = [
     id: 13,
     name: "El divorcio",
     date: "9 de febrero",
-    category: "teatro",
+    category: { name:"Teatro", 
+                id: "Teatro",},
     cardImg: "./img/imgProduct/el-divorcio.jpg",
     precio:3000,
   },
@@ -109,7 +122,8 @@ const productsData = [
     id: 14,
     name: "Parque lezama",
     date: "19 de febrero",
-    category: "teatro",
+    category: { name:"Teatro", 
+                id: "Teatro",},
     cardImg: "./img/imgProduct/parque-lezama.jpg",
     precio:2000,
   },
@@ -117,7 +131,8 @@ const productsData = [
     id: 15,
     name: "El trinche en mar del plata",
     date: "29 de febrero",
-    category: "teatro",
+    category: { name:"Teatro", 
+                id: "Teatro",},
     cardImg: "./img/imgProduct/martin-dardik---el-trinche-en-mar-del-plata.jpg",
     precio:2500,
   },
@@ -125,14 +140,16 @@ const productsData = [
     id: 16,
     name: "Male Guinzburg",
     date: "15 de marzo",
-    category: "teatro",
+    category: { name:"Teatro", 
+                id: "Teatro",},
     cardImg: "./img/imgProduct/male-guinzburg---unipersonal.jpg",
     precio:3000,
   },
 ];
 
 const conteinerProduct = document.querySelector('.conteinerProduct');
-//const buttonCategory = document.querySelectorAll('.buttonCategory');
+const buttonCategory = document.querySelectorAll('.buttonCategory');
+const tituloEvento = document.querySelector('.tituloEvento');
 
 
 
@@ -164,19 +181,23 @@ function renderproduct(selecProduct) {
 renderproduct(productsData);
 
 
-/*buttonCategory.forEach(button=> {
+buttonCategory.forEach(button=> {
   
   button.addEventListener("click", (e)=>{
    
-    botonesCategorias.forEach(boton => boton.classList.remove("active"));
+    buttonCategory.forEach(button => button.classList.remove("active"));
     e.currentTarget.classList.add("active");
 
     if (e.currentTarget.id != "todos") {
-        const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
-        tituloPrincipal.innerText = productoCategoria.categoria.nombre;
-        const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
-        cargarProductos(productosBoton);
+        const productCategory = productsData.find(product => product.category.id === e.currentTarget.id);
+        tituloEvento.innerText = productCategory.category.name;
+        const productsButton = productsData.filter(product => product.category.id === e.currentTarget.id);
+        renderproduct(productsButton);
     } 
+     else {
+      tituloEvento.innerText = "Todas";
+      renderproduct(productsData);
+}
     
   })
-})*/
+});

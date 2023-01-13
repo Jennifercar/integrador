@@ -66,6 +66,12 @@ header nav a:hover {
 	border-radius:20px;
 	
 }
+
+.tituloEvento{
+	color: aliceblue;
+	font-size: 3em;
+	margin-left: 1rem;
+}
 .main{
 	
 	display:flex;
@@ -91,8 +97,8 @@ header nav a:hover {
 	
 }
 .imgProduct{
-	width: 382px;
-	height: 318px;
+	width: 412px;
+	height: 287px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
