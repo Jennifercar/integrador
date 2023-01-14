@@ -128,17 +128,9 @@ const productsData = [
     cardImg: "./img/imgProduct/parque-lezama.jpg",
     precio:2000,
   },
+  
   {
     id: 15,
-    name: "El trinche en mar del plata",
-    date: "29 de febrero",
-    category: { name:"Teatro", 
-                id: "Teatro",},
-    cardImg: "./img/imgProduct/martin-dardik---el-trinche-en-mar-del-plata.jpg",
-    precio:2500,
-  },
-  {
-    id: 16,
     name: "Male Guinzburg",
     date: "15 de marzo",
     category: { name:"Teatro", 
@@ -187,12 +179,12 @@ buttonCategory.forEach(button=> {
   button.addEventListener("click", (e)=>{
    
     buttonCategory.forEach(button => button.classList.remove("active"));
-    e.currentTarget.classList.add("active");
+    e.target.classList.add("active");
 
-    if (e.currentTarget.id != "todos") {
-        const productCategory = productsData.find(product => product.category.id === e.currentTarget.id);
+    if (e.target.id != "todos") {
+        const productCategory = productsData.find(product => product.category.id === e.target.id);
         tituloEvento.innerText = productCategory.category.name;
-        const productsButton = productsData.filter(product => product.category.id === e.currentTarget.id);
+        const productsButton = productsData.filter(product => product.category.id === e.target.id);
         renderproduct(productsButton);
     } 
      else {

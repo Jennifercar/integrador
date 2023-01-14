@@ -66,20 +66,39 @@ header nav a:hover {
 	background-image: url(/img/f9a98ff98167367f51f30db94eb85514.jpg);
 	
 }
+
+.categoryUl{
+	display: flex;
+	justify-content:space-between;
+	gap:1rem;
+	margin: 50px;
+	list-style: none;
+	text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #db9bbb 0px 0px 20px, #e9cada 0px 0px 30px, #150953 0px 0px 40px, #422dff 0px 0px 50px, #FF2D95 0px 0px 75px;
+	font-weight: 700;
+}
+
+
 .buttonCategory{
 
-	color:rgb(255, 255, 255);
-	border-radius: 12px;
-	background-color: #000000;
+	color:rgb(211, 197, 197);
+	border-radius: 10px;
+	background-image: url(./img/f9a98ff98167367f51f30db94eb85514.jpg);
+	background-position:center;
+	background-size:auto;
 	font-size:20px;
-	font-weight:bold;
+	border-color: rgb(140, 146, 146);
 	margin: 5px;
+	padding: 16px;
 	-webkit-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
 	transition:all 500ms ease;
 }
 .buttonCategory:hover {
-	background:#725ba8;
+	background-image: url(./img/prtitura.jpg);
+	background-clip: text;
+	-webkit-background-clip: text;
+	font-size: 45px;
+	color: transparent;
 	border-radius:20px;
 	
 }
@@ -276,7 +295,7 @@ align-items: center;
 
 @media (max-width: 426px) {
     .imgProduct {
-        width: 224px;
+        width: 252px;
 	
 	transition: all 400ms ease-out 0s;
     }
