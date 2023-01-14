@@ -143,7 +143,7 @@ const productsData = [
 const conteinerProduct = document.querySelector('.conteinerProduct');
 const buttonCategory = document.querySelectorAll('.buttonCategory');
 const tituloEvento = document.querySelector('.tituloEvento');
-
+//let buttonAdd = document.querySelectorAll(".buttonAdd");
 
 
 function renderproduct(selecProduct) {
@@ -163,13 +163,13 @@ function renderproduct(selecProduct) {
           <h2>${product.name}</h2>
           <h3>${product.date}</h3>
           <h3 class="precio">Precio: ${product.precio}</h3>
-          <button class="buttonAgregar" id="${product.id}">Agregar</button></div>
+          <button class="buttonAdd" id="${product.id}">Agregar</button></div>
 			    </div>`
 
           conteinerProduct.append(div);
   
         } );
-
+      //  buttonAddAtual()
 }
 renderproduct(productsData);
 
@@ -194,3 +194,33 @@ buttonCategory.forEach(button=> {
     
   })
 });
+
+/*function buttonAddAtual() {
+  buttonAdd = document.querySelectorAll(".buttonAdd");
+
+  buttonAdd.forEach(button => {
+    button.addEventListener("click", addCarrito);
+  });
+}
+
+let productCarrito;
+
+let productCarritoLocalS = localStorage.getItem("productos-en-carrito");
+
+
+
+function addCarrito(e) {
+  const buttonId = e.currentTarget.id;
+  const productIncorporated = products.find(product => product.id === buttonId);
+
+  if(productCarrito.some(product => product.id === buttonId)) {
+      const index = productCarrito.findIndex(product => product.id === buttonId);
+      productCarrito[index].cantidad++;
+  } else {
+    productIncorporated.cantidad = 1;
+    productCarrito.push(productIncorporated);
+
+  }
+  localStorage.setItem("productos-en-carrito", JSON.stringify(productCarrito));
+
+}*/
