@@ -75,6 +75,7 @@ header nav a:hover {
 	list-style: none;
 	text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #db9bbb 0px 0px 20px, #e9cada 0px 0px 30px, #150953 0px 0px 40px, #422dff 0px 0px 50px, #FF2D95 0px 0px 75px;
 	font-weight: 700;
+	border-style: none;
 }
 
 
@@ -86,7 +87,7 @@ header nav a:hover {
 	background-position:center;
 	background-size:auto;
 	font-size:20px;
-	border-color: rgb(140, 146, 146);
+	border-style: none;
 	margin: 5px;
 	padding: 16px;
 	-webkit-transition:all 500ms ease;
@@ -133,13 +134,16 @@ header nav a:hover {
 	gap:1rem;
 	border-top: 10px;
 	
+
 }
+
 .product{
 	background-color: #0b2739;
 	color: aliceblue;
 	border-radius: 8px;
 	margin: 30px;
 	flex-direction: row;
+	
 	
 
 	
@@ -155,6 +159,7 @@ header nav a:hover {
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	display: flex;
+	
 	
 	
 }
