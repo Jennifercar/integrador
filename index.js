@@ -174,7 +174,16 @@ const conteinerProduct = document.querySelector('.conteinerProduct');
 const buttonCategory = document.querySelectorAll('.buttonCategory');
 const tituloEvento = document.querySelector('.tituloEvento');
 let buttonAdd = document.querySelectorAll(".buttonAdd");
+const carritoDeCompras = document.querySelector('.carritoDeCompras');
+const cartContenedor = document.querySelector('.cartContenedor');
 
+
+
+const saveLocalStorage = (cartList) => {
+  localStorage.setItem("cart", JSON.stringify(cartList));
+};
+
+let carrito =[];
 //rederizaso
 function renderproduct(selecProduct) {
 
@@ -193,16 +202,31 @@ function renderproduct(selecProduct) {
           <h2>${product.name}</h2>
           <h3>${product.date}</h3>
           <h3 class="precio">Precio: ${product.precio}</h3>
-          <button class="buttonAdd" id="${product.id}">Agregar</button></div>
 			    </div>`
 
     conteinerProduct.append(div);
 
-  });
-  buttonAddAtual()
+    const comprar = document.createElement("button");
+    comprar.innerText ="comprar";
+    comprar.className="buttonAdd"
 
+    div.append(comprar);
+
+    comprar.addEventListener("click",() =>{
+         carrito.push({
+         id: product.id,
+         cardImg: product.cardImg,
+         name: product.name,
+         precio: product.precio,
+      });
+    console.log(carrito);
+      })
+      });
+  
 }
-renderproduct(productsData);
+  renderproduct(productsData);
+
+ 
 
 //filter
 buttonCategory.forEach(button => {
@@ -223,23 +247,4 @@ buttonCategory.forEach(button => {
   })
 });
 
-function buttonAddAtual() {
-  buttonAdd = document.querySelectorAll(".buttonAdd");
-  buttonAdd.forEach(button => {
-    button.addEventListener("click", addCarrito);
-  });
-}
 
-
-
-const productInCarrito = [];
-
-function addCarrito(e) {
-  const buttonId = e.currentTarget.id;
-  const productIncorporated = productsData.find(product => product.id === buttonId);
-
-  console.log(buttonId);
-  console.log(productIncorporated);
-
-
-}

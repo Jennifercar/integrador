@@ -47,6 +47,7 @@ header nav a:hover {
 }
 
 
+
 #imagendecarrucel{
 	
     display: flex;
@@ -114,7 +115,7 @@ header nav a:hover {
 .tituloEvento{
 	color: aliceblue;
 	font-weight: 300;
-	margin-left: 1rem;
+	margin: 20px;
 	
 	
 }
@@ -122,6 +123,8 @@ header nav a:hover {
 	
 	display:flex;
 	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 	background-color: #051b28;
 	
 }
@@ -143,7 +146,6 @@ header nav a:hover {
 	border-radius: 8px;
 	margin: 30px;
 	flex-direction: row;
-	
 	
 
 	
@@ -193,6 +195,54 @@ header nav a:hover {
 	flex-direction: column;
 	margin: 25px;
 
+}
+
+.botonVerMas{
+	display: flex;
+	justify-content: center;
+	border-radius: 20px;
+	border-color: #ff008a;
+	background-color: #ff008a;
+	color: #fff;
+	width: 200px;
+    height: 38px;
+	margin-top: 15px;
+	cursor: pointer;
+	
+}
+.footer{
+	background: -webkit-linear-gradient(black, #2b5a8d, #4b7d86);
+	display: flex;
+	color: #fff;
+	justify-content: space-around;
+	
+	
+
+}
+.contactos{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	
+
+}
+.listaContacto{
+	list-style: none;
+	color: #fff;
+}
+.iconosRedSocial{
+	color: #fff;
+	display: flex;
+	align-items: center;
+	margin: 10px;
+	
+
+}
+.listaRedeSociales{
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	
 }
 /**carrito de compras**/ 
 
@@ -297,6 +347,15 @@ align-items: center;
 	height: 158px;
 	transition: all 400ms ease-out 0s;
     }
+	.footer{
+
+		flex-wrap: wrap;
+		
+	}
+	.listaRedeSociales{
+		justify-content: space-around;
+
+	}
 	}
 
 @media (max-width: 426px) {
@@ -317,5 +376,14 @@ padding: 3px;
 }
 .buttonCategory:hover {
 font-size: 30px;
+}
+.footer{
 
-}}
+	flex-wrap: wrap;
+	
+}
+.listaRedeSociales{
+	justify-content: space-around;
+
+}
+}
