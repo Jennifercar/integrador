@@ -173,10 +173,10 @@ const productsData = [
 const conteinerProduct = document.querySelector('.conteinerProduct');
 const buttonCategory = document.querySelectorAll('.buttonCategory');
 const tituloEvento = document.querySelector('.tituloEvento');
-let buttonAdd = document.querySelectorAll(".buttonAdd");
-const carritoDeCompras = document.querySelector('.carritoDeCompras');
+//let buttonAdd = document.querySelectorAll(".buttonAdd");
+const carritoBoton = document.querySelector('.carritoBoton');
 const cartContenedor = document.querySelector('.cartContenedor');
-
+const modalContainer = document.getElementById("modal-container")
 
 
 const saveLocalStorage = (cartList) => {
@@ -217,6 +217,7 @@ function renderproduct(selecProduct) {
          id: product.id,
          cardImg: product.cardImg,
          name: product.name,
+         date:product.date,
          precio: product.precio,
       });
     console.log(carrito);
@@ -226,7 +227,50 @@ function renderproduct(selecProduct) {
 }
   renderproduct(productsData);
 
- 
+  carritoBoton.addEventListener("click",() =>{
+    const modalHeader = document.createElement("div");
+    modalHeader.className = "modal-header";
+    modalHeader.innerHTML = `
+    <h2 class= "modal-header-title">Tu ticket aqui:</h2>`;
+
+    modalContainer.append(modalHeader);
+
+    const modalButton = document.createElement("h1");
+    modalButton.className = "modal-header-button";
+    modalButton.innerText = `x`;
+
+    modalButton.addEventListener("click",() => {
+      modalContainer.style.display="none";
+    })
+
+    modalHeader.append(modalButton);
+
+   carrito.forEach((product)=>{
+      let carritoContent = document.createElement("div");
+    carritoContent.className = "modal-content";
+    carritoContent.innerHTML = `
+    <img class="imgProduct" src="${product.cardImg}" alt="${product.name}">
+    <h2>${product.name}</h2>
+          <h3>${product.date}</h3>
+          <h3 class="precio">Precio: ${product.precio}</h3>
+     `;
+
+     modalContainer.append(carritoContent)
+
+    });
+
+  const total = carrito.reduce((acc , cur) => acc + cur.precio,0);
+
+  const totalBuying = document.createElement("div")
+  totalBuying.className="total-content"
+  totalBuying.innerHTML= `Total a pagar: ${total}`;
+  modalContainer.append(totalBuying);
+  });
+
+
+
+
+
 
 //filter
 buttonCategory.forEach(button => {
