@@ -1,190 +1,19 @@
 'use strict'
-
-const productsData = [
-  {
-    id: 1,
-    name: "Sabina",
-    date: "12 Marzo ",
-    category: {
-      name: "Conciertos",
-      id: "Conciertos",
-    },
-    cardImg: "./img/imgProduct/Sabina_CTP_HOME-MOVISTAR-ARENA.jpg",
-    precio: 5000,
-  },
-  {
-    id: 2,
-    name: "Camilo",
-    date: "16 de marzo",
-    category: {
-      name: "Conciertos",
-      id: "Conciertos",
-    },
-    cardImg: "./img/imgProduct/Camilo.jpg",
-    precio: 7500,
-  },
-  {
-    id: 3,
-    name: "David Guetta",
-    date: "9 de febrero",
-    category: {
-      name: "Conciertos",
-      id: "Conciertos",
-    },
-    cardImg: "./img/imgProduct/davidguetta.jpg",
-    precio: 4500,
-  },
-  {
-    id: 4,
-    name: "Alejandro Sanz",
-    date: "21 de enero",
-    category: {
-      name: "Conciertos",
-      id: "Conciertos",
-    },
-    cardImg: "./img/imgProduct/Sanz.jpg",
-    precio: 8000,
-  },
-  {
-    id: 5,
-    name: "Reik",
-    date: "6 de marzo",
-    category: {
-      name: "Conciertos",
-      id: "Conciertos",
-    },
-    cardImg: "./img/imgProduct/Reik.jpg",
-    precio: 7500,
-  },
-  {
-    id: 6,
-    name: "Connie Ballarini",
-    date: "14 de febrero",
-    category: {
-      name: "Teatro",
-      id: "Teatro",
-    },
-    cardImg: "./img/imgProduct/connie.jpg",
-    precio: 3000,
-  },
-  {
-    id: 7,
-    name: "La Granja",
-    date: "4 Marzo",
-    category: {
-      name: "Teatro",
-      id: "Teatro",
-    },
-    cardImg: "./img/imgProduct/lagranja.jpg",
-    precio: 1000,
-  },
-  {
-    id: 8,
-    name: "Alejandro Fernandez",
-    date: "6 de marzo",
-    category: {
-      name: "Conciertos",
-      id: "Conciertos",
-    },
-    cardImg: "./img/imgProduct/385X250-2.jpg",
-    precio: 6000,
-  },
-  {
-    id: 9,
-    name: "Lali",
-    date: "4 de marzo",
-    category: {
-      name: "Conciertos",
-      id: "Conciertos",
-    },
-    cardImg: "./img/imgProduct/Lali3DIC600.jpg",
-    precio: 4500,
-  },
-
-  {
-    id: 10,
-    name: "Los Fabulosos Cadillacs",
-    date: "26 Mayo",
-    category: {
-      name: "Conciertos",
-      id: "Conciertos",
-    },
-    cardImg: "./img/imgProduct/LFC.385x250-1.jpg",
-    precio: 4000,
-  },
-  {
-    id: 11,
-    name: "Mi madre mi novia y yo",
-    date: "22 de enero",
-    category: {
-      name: "Teatro",
-      id: "Teatro",
-    },
-    cardImg: "./img/imgProduct/mi-madre-mi-novia-y-yo.jpg",
-    precio: 2000,
-  },
-  {
-    id: 12,
-    name: "Convivencia obligada",
-    date: "26 de Marzo",
-    category: {
-      name: "Teatro",
-      id: "Teatro",
-    },
-    cardImg: "./img/imgProduct/convivencia-obligada.jpg",
-    precio: 3000,
-  },
-  {
-    id: 13,
-    name: "El divorcio",
-    date: "9 de febrero",
-    category: {
-      name: "Teatro",
-      id: "Teatro",
-    },
-    cardImg: "./img/imgProduct/el-divorcio.jpg",
-    precio: 3000,
-  },
-  {
-    id: 14,
-    name: "Parque lezama",
-    date: "19 de febrero",
-    category: {
-      name: "Teatro",
-      id: "Teatro",
-    },
-    cardImg: "./img/imgProduct/parque-lezama.jpg",
-    precio: 2000,
-  },
-
-  {
-    id: 15,
-    name: "Male Guinzburg",
-    date: "15 de marzo",
-    category: {
-      name: "Teatro",
-      id: "Teatro",
-    },
-    cardImg: "./img/imgProduct/male-guinzburg---unipersonal.jpg",
-    precio: 3000,
-  },
-];
-
 const conteinerProduct = document.querySelector('.conteinerProduct');
 const buttonCategory = document.querySelectorAll('.buttonCategory');
-const tituloEvento = document.querySelector('.tituloEvento');
-//let buttonAdd = document.querySelectorAll(".buttonAdd");
 const carritoBoton = document.querySelector('.carritoBoton');
 const cartContenedor = document.querySelector('.cartContenedor');
 const modalContainer = document.getElementById("modal-container")
 
 
-const saveLocalStorage = (cartList) => {
-  localStorage.setItem("cart", JSON.stringify(cartList));
+const saveLocalStorage = () => {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
-let carrito =[];
+let carrito =JSON.parse(localStorage.getItem("carrito")) || [];
+
 //rederizaso
+
 function renderproduct(selecProduct) {
 
   conteinerProduct.innerHTML = "";
@@ -206,6 +35,8 @@ function renderproduct(selecProduct) {
 
     conteinerProduct.append(div);
 
+  //carrito
+
     const comprar = document.createElement("button");
     comprar.innerText ="comprar";
     comprar.className="buttonAdd"
@@ -213,31 +44,51 @@ function renderproduct(selecProduct) {
     div.append(comprar);
 
     comprar.addEventListener("click",() =>{
-         carrito.push({
+
+    const repetido = carrito.some((productoRepetido) => productoRepetido.id === product.id);
+      if( repetido){
+        carrito.map((prod) => {
+          if ( prod.id === product.id){
+            prod.quantity++;
+          }
+        });
+
+      }else {
+       carrito.push({
          id: product.id,
          cardImg: product.cardImg,
          name: product.name,
          date:product.date,
          precio: product.precio,
+         quantity: product.quantity,
       });
+    };
     console.log(carrito);
+
+    saveLocalStorage();
       })
+
+      
       });
   
 }
   renderproduct(productsData);
 
-  carritoBoton.addEventListener("click",() =>{
+  const mostrarCart = () =>{
+    modalContainer.innerHTML="";
+    modalContainer.style.display="flex";
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header";
     modalHeader.innerHTML = `
-    <h2 class= "modal-header-title">Tu ticket aqui:</h2>`;
+    <h2 class= "modal-header-title"> Tu ticket aqui:</h2>`;
 
     modalContainer.append(modalHeader);
 
-    const modalButton = document.createElement("h1");
+    const modalButton = document.createElement("a");
     modalButton.className = "modal-header-button";
-    modalButton.innerText = `x`;
+    modalButton.innerHTML = `<a><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi-x" viewBox="0 0 20 20">
+    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+  </svg></a>`;
 
     modalButton.addEventListener("click",() => {
       modalContainer.style.display="none";
@@ -249,26 +100,69 @@ function renderproduct(selecProduct) {
       let carritoContent = document.createElement("div");
     carritoContent.className = "modal-content";
     carritoContent.innerHTML = `
+    <div class="modal-content2">
     <img class="imgProduct" src="${product.cardImg}" alt="${product.name}">
     <h2>${product.name}</h2>
           <h3>${product.date}</h3>
-          <h3 class="precio">Precio: ${product.precio}</h3>
+          <h3 class="precio">Precio: ${product.precio}$</h3>
+          <span class="restar"> - </span>
+          <h3> ${product.quantity}</h3>
+          <span class="sumar"> + </span>
+          </div>
      `;
 
-     modalContainer.append(carritoContent)
+     modalContainer.append(carritoContent);
+
+     let restar = carritoContent.querySelector(".restar");
+     restar.addEventListener("click", () => {
+      if(product.quantity !== 1) {
+      product.quantity--};
+      saveLocalStorage();
+      mostrarCart();
+     });
+
+     let sumar = carritoContent.querySelector(".sumar");
+     sumar.addEventListener("click", () => {
+      if(product.quantity !== 1) {
+      product.quantity++};
+      saveLocalStorage();
+      mostrarCart();
+     });
+
+     let eliminarProducto= document.createElement("a");
+     eliminarProducto.className = "eliminarProducto";
+     eliminarProducto.innerHTML=`
+     <a><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bitrash3" viewBox="0 0 16 16">
+	<path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+  </svg></a>
+     `
+     carritoContent.append(eliminarProducto);
+    
+     eliminarProducto.addEventListener("click",eliminarProductoDelCarrito)
 
     });
 
-  const total = carrito.reduce((acc , cur) => acc + cur.precio,0);
+  const total = carrito.reduce((acc , cur) => acc + cur.precio * cur.quantity,0);
 
   const totalBuying = document.createElement("div")
   totalBuying.className="total-content"
-  totalBuying.innerHTML= `Total a pagar: ${total}`;
+  totalBuying.innerHTML= `Total a pagar: ${total}$`;
   modalContainer.append(totalBuying);
-  });
+};
+
+carritoBoton.addEventListener("click",mostrarCart);
+ 
 
 
+const eliminarProductoDelCarrito = () => {
+const founId =carrito.find((elemento) => elemento.id);
+carrito= carrito.filter((carritoId) => {
+  return carritoId !== founId;
+});
 
+mostrarCart();
+
+ };
 
 
 
