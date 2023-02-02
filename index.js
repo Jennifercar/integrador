@@ -68,7 +68,6 @@ function renderproduct(selecProduct) {
     saveLocalStorage();
       })
 
-      
       });
   
 }
