@@ -185,12 +185,15 @@ buttonCategory.forEach(button => {
 });
 
 
-//menu hamburguesa
-const iconoMenu = document.querySelector("#iconoMenu");
-const navItem = document.querySelector("#navItem");
+const burger = document.getElementById('burger');
+const menu = document.querySelector('.menu');
+const closeMenu = document.getElementById('closeMenu');
 
+//EVENTS
+burger.addEventListener('click', toggleMenu);
+closeMenu.addEventListener('click', toggleMenu);
 
-iconoMenu.addEventListener("click",(e)=>{
-  navItem.classList.toggle("active2");
-  document.body.classList.toggle("opacity");
-})
+//MENU TOGGLE
+function toggleMenu() {
+    menu.classList.toggle('openMenu');
+}

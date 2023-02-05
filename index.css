@@ -1,78 +1,62 @@
-* {
-    padding: 0;
-    margin: 0;
-	box-sizing: border-box;
 
-}
-body{
-	margin: 0;
-}
-.navContainer {
-	background:#000000;
-	height: 300px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: row-reverse;
-
-	
-}
-.navLogo{
-	margin: 10px;
-}
-.navItem{
-	background-image: url(./img/KeBY2b.gif);
-	background-position: center;
-	background-size: contain;
-	box-shadow: 10px 6px 10px 2px rgb(53, 53, 53);
-	width: 700px;
-	height: 32vh;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition: all .5s ease;
-}
-.active2{
-	transform: translate(-700px);
-}
-.opacity{
-	background-color: #0b2739;
-	transition: all .5s ease;
-
-}
-.navItem a{
-	padding: 9px 0px 20px 60px;
-	text-decoration: none;
-	display:flex ;
-	font-size: 20px;
-	
-	color: #fff9f9;
-	
-	
-}
-.navItem:hover{
-	background-color: #3f3030;
-	color:black;
-	
-
-}
-
-.menuHamburguesa{
-	color: #ffffff;
-	position: relative;
-	cursor: pointer;
-	display: flex;
-	margin: 10px;
-
-	
-	
-}
-.login{
+.containerHeader{
 	display: flex;
 	justify-content: space-around;
 	
+	
 }
-
+.botonLoguin{
+	display: flex;
+	justify-content: center;
+	border-radius: 20px;
+	border-color: #ff008a;
+	background-color: #0b2739;
+	color: #fff;
+	margin-bottom: 15px;
+	width: 200px;
+    height: 38px;
+	cursor: pointer;
+}
+.imgLogo{
+	margin: 10px;
+	
+}
+#burger, #closeMenu {
+    font-size: 3rem;
+    font-weight: bolder;
+    cursor: pointer;
+    user-select: none;
+} 
+.menu {
+    background-image: url(./img/KeBY2b.gif);
+    color: white;
+    text-decoration: none;
+    /*Posicionamos el menú*/
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 220px;
+    padding: 50px;
+    padding-top: 0;
+    box-sizing: border-box;
+    text-align: right;
+    transition: .5s; 
+     
+}
+.menu li {
+    color: #e9eeed;
+	text-decoration: none;
+    text-align: left ;
+    list-style: none;
+    font-size: 19px;
+    cursor: pointer;
+    
+}
+.openMenu {
+     left: 0;             
+}
 
 #imagendecarrucel{
 	
