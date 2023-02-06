@@ -1,58 +1,69 @@
-
 .containerHeader{
 	display: flex;
-	justify-content: space-around;
-	
-	
-}
-.botonLoguin{
-	display: flex;
-	justify-content: center;
-	border-radius: 20px;
-	border-color: #ff008a;
-	background-color: #0b2739;
-	color: #fff;
-	margin-bottom: 15px;
-	width: 200px;
-    height: 38px;
-	cursor: pointer;
+	justify-content:space-between;
+	padding: 30px;
+	background-image: url(./img/f9a98ff98167367f51f30db94eb85514.jpg);
+	color: #FFF;
 }
 .imgLogo{
 	margin: 10px;
-	
+	border-radius: 50%;
+	width:200px;
+	height:200px;
 }
-#burger, #closeMenu {
-    font-size: 3rem;
+#burger{
+	font-size:60px;
     font-weight: bolder;
     cursor: pointer;
     user-select: none;
+	position: relative;
+	right: 50px;
+}
+
+#closeMenu {
+    font-size:40px;
+    font-weight: bolder;
+    cursor: pointer;
+    user-select: none;
+	
+	
 } 
 .menu {
+	display: flex;
+	color: #c2c5c4;
+	font-weight: 50;
     background-image: url(./img/KeBY2b.gif);
-    color: white;
-    text-decoration: none;
-    /*Posicionamos el menú*/
     position:fixed;
     top: 0;
     bottom: 0;
     left: -100%;
-    width: 100%;
-    height: 220px;
+    width: 90%;
+    height: 280px;
     padding: 50px;
-    padding-top: 0;
     box-sizing: border-box;
     text-align: right;
     transition: .5s; 
      
 }
 .menu li {
-    color: #e9eeed;
-	text-decoration: none;
-    text-align: left ;
-    list-style: none;
-    font-size: 19px;
-    cursor: pointer;
+  text-align: left;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 600;
     
+}
+.menu a{
+	color: #e9eeed;
+	text-decoration: none;
+	font-size: 25px;
+	font-weight: 400;
+	transition: all 300ms ease-out 0s;
+}
+.menu a:hover{
+	color: #e9cada;
+	font-size: 30px;
+	
+
 }
 .openMenu {
      left: 0;             
@@ -395,9 +406,22 @@
 
 @media (max-width: 426px) {
     .imgLogo{
-		width:150;
-		height:150;
+		width:105px;
+	height:105px;
 	}
+	.menu {
+width: 70%;
+height: 182px;
+padding-top: 0;
+	}
+	.menu a {
+		font-size: 15px;
+	}
+	#closeMenu {
+		font-size:30px;
+		 }
+
+
 	
 	.imgProduct {
         width: 252px;
