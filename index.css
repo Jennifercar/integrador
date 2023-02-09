@@ -1,13 +1,18 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 65px;
+  }
+
 .containerHeader{
 	display: flex;
 	width: 100%;
 	justify-content:space-between;
 	background-color: #000000;
+	padding: 30px;
 	
 }
 .imgLogo{
 	margin-left: 50px;
-	width: 30%;
 	border-radius: 50%;
 	width: 18vw;
 	
@@ -370,13 +375,26 @@ padding-left: 20px;
 	font-weight: 700;
 	align-items: center;
 }
+
+@media (max-width: 1090px){
+	.menu li {
+    padding-left: 8px;;
+	} 
+ }
+@media (max-width: 972px){
+		.menu a {
+			font-size: 18px;
+	  
+			
+		} 
+ }
 @media (max-width: 800px){
 	.containerHeader{
 		display: flex;
 		justify-content:space-between;
-		padding: 30px;
 		background-color: #000000;
 		color: #FFF;
+		padding: 45px;
 	}
 	#burger{
 		display: flex;
@@ -396,9 +414,12 @@ padding-left: 20px;
 		user-select: none;
 		
 		
+		
 	} 
 	.menu {
 		display: flex;
+		justify-content: center;
+        width: 70%;
 		color: #c2c5c4;
 		font-weight: 50;
 		background-image: url(./img/KeBY2b.gif);
@@ -406,20 +427,20 @@ padding-left: 20px;
 		top: 0;
 		bottom: 0;
 		left: -100%;
-		width: 70%;
         height: 171px;
-        padding-top: 0;
-		box-sizing: border-box;
-		
 		transition: .5s; 
+		padding-top: 0;
 		 
 	}
 	.menu li {
+		display: flex;
+		margin-bottom: 0;
 	  text-align: left;
 	  list-style: none;
 	  font-size: 15px;
 	  font-weight: 600;
-	  padding-left: 100px;
+	  padding-right: 15vh;
+	  
 		
 	}
 	.menu a{
@@ -438,9 +459,21 @@ padding-left: 20px;
 	.openMenu {
 		 left: 0;             
 	}
+	
 }
 
   @media (max-width: 534px) {
+	.menu {
+		width: 70%;
+		
+		padding-top: 0;
+			}
+	.menu li {
+		display: flex;
+		margin-bottom: 0;
+	
+		
+	}
     .imgProduct {
         width: 250px;
 	height: 158px;
@@ -464,8 +497,14 @@ padding-left: 20px;
 	}
 	.menu {
 width: 70%;
-height: 193px;
+
 padding-top: 0;
+	}
+	.menu li {
+		display: flex;
+		margin-bottom: 0;
+	
+		
 	}
 	.menu a {
 		font-size: 15px;
