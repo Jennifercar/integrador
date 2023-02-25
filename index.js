@@ -151,8 +151,6 @@ function renderproduct(selecProduct) {
 
 carritoBoton.addEventListener("click",mostrarCart);
  
-
-
 const eliminarProductoDelCarrito = () => {
 const founId =carrito.find((elemento) => elemento.id);
 carrito= carrito.filter((carritoId) => {
@@ -162,7 +160,6 @@ carrito= carrito.filter((carritoId) => {
 mostrarCart();
 
  };
-
 
 
 //filter
@@ -181,21 +178,17 @@ buttonCategory.forEach(button => {
       renderproduct(productsData);
     }
 
-  })
+  }) 
 });
 
-
+//eventos
 const burger = document.getElementById('burger');
 const menu = document.querySelector('.menu');
 const closeMenu = document.getElementById('closeMenu');
 
-
-//EVENTS
 burger.addEventListener('click', toggleMenu);
 closeMenu.addEventListener('click', toggleMenu);
 
-
-//MENU TOGGLE
 function toggleMenu() {
     menu.classList.toggle('openMenu');
     
