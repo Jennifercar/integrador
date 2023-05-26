@@ -60,17 +60,20 @@ function renderproduct(selecProduct) {
          name: product.name,
          date:product.date,
          precio: product.precio,
-         quantity: product.quantity,
+         quantity: 1,
       });
     };
-    console.log(carrito);
 
     saveLocalStorage();
-      })
+    mostrarCart();
+      });
+
+      
 
       });
   
 }
+
   renderproduct(productsData);
 
   const mostrarCart = () =>{
@@ -96,7 +99,7 @@ function renderproduct(selecProduct) {
     modalHeader.append(modalButton);
 
    carrito.forEach((product)=>{
-      let carritoContent = document.createElement("div");
+      const carritoContent = document.createElement("div");
     carritoContent.className = "modal-content";
     carritoContent.innerHTML = `
     <div class="modal-content2">
@@ -112,21 +115,21 @@ function renderproduct(selecProduct) {
 
      modalContainer.append(carritoContent);
 
-     let restar = carritoContent.querySelector(".restar");
-     restar.addEventListener("click", () => {
-      if(product.quantity !== 1) {
-      product.quantity--};
-      saveLocalStorage();
-      mostrarCart();
-     });
+     const restar = carritoContent.querySelector(".restar");
+    restar.addEventListener("click", () => {
+      if (product.quantity > 1) {
+        product.quantity--;
+        saveLocalStorage();
+        mostrarCart();
+      }
+    });
 
-     let sumar = carritoContent.querySelector(".sumar");
-     sumar.addEventListener("click", () => {
-      if(product.quantity !== 1) {
-      product.quantity++};
+    const sumar = carritoContent.querySelector(".sumar");
+    sumar.addEventListener("click", () => {
+      product.quantity++;
       saveLocalStorage();
       mostrarCart();
-     });
+    });
 
      let eliminarProducto= document.createElement("a");
      eliminarProducto.className = "eliminarProducto";
