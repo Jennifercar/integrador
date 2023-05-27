@@ -312,6 +312,19 @@ padding-left: 20px;
 	align-items: center;
 	}
 
+.buttonCompraTotal{
+	display: flex;
+	justify-content: center;
+	background-color: transparent;
+	border-radius: 20px;
+	color: #fff4f4;
+	margin-bottom: 15px;
+	width: 200px;
+	height: 50px;
+	cursor: pointer;
+	}
+	
+
 /**footer**/
 .footer{
 	background: -webkit-linear-gradient(black, #2b5a8d, #4b7d86);

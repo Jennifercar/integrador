@@ -67,18 +67,14 @@ function renderproduct(selecProduct) {
     saveLocalStorage();
     mostrarCart();
       });
-
-      
-
       });
-  
 }
-
   renderproduct(productsData);
 
   const mostrarCart = () =>{
     modalContainer.innerHTML="";
     modalContainer.style.display="flex";
+
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header";
     modalHeader.innerHTML = `
@@ -97,6 +93,8 @@ function renderproduct(selecProduct) {
     })
 
     modalHeader.append(modalButton);
+
+    
 
    carrito.forEach((product)=>{
       const carritoContent = document.createElement("div");
@@ -131,7 +129,7 @@ function renderproduct(selecProduct) {
       mostrarCart();
     });
 
-     let eliminarProducto= document.createElement("a");
+     const eliminarProducto= document.createElement("a");
      eliminarProducto.className = "eliminarProducto";
      eliminarProducto.innerHTML=`
      <a><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bitrash3" viewBox="0 0 16 16">
@@ -150,19 +148,41 @@ function renderproduct(selecProduct) {
   totalBuying.className="total-content"
   totalBuying.innerHTML= `Total a pagar: ${total}$`;
   modalContainer.append(totalBuying);
+   
+
+  const compraTotal = document.createElement("button");
+  compraTotal.textContent = "Comprar todos los productos";
+  compraTotal.className = "buttonCompraTotal";
+  modalContainer.append(compraTotal);
+
+  compraTotal.addEventListener("click", () => {
+    if (carrito.length > 0) {
+      carrito = [];
+      saveLocalStorage();
+      mostrarCart();
+
+      
+      const mensajeExito = document.createElement("span");
+      mensajeExito.textContent = "¡Su compra ha sido exitosa!";
+      modalContainer.append(mensajeExito);
+    } else {
+      const mensajeVacio = document.createElement("span");
+      mensajeVacio.textContent = "¡El carrito está vacío!";
+      modalContainer.append(mensajeVacio);
+    }
+  });
 };
 
-carritoBoton.addEventListener("click",mostrarCart);
- 
+carritoBoton.addEventListener("click", mostrarCart);
+
 const eliminarProductoDelCarrito = () => {
-const founId =carrito.find((elemento) => elemento.id);
-carrito= carrito.filter((carritoId) => {
-  return carritoId !== founId;
-});
+  const foundId = carrito.find((elemento) => elemento.id);
+  carrito = carrito.filter((carritoId) => {
+    return carritoId !== foundId;
+  });
 
-mostrarCart();
-
- };
+  mostrarCart();
+};
 
 
 //filter
@@ -196,3 +216,4 @@ function toggleMenu() {
     menu.classList.toggle('openMenu');
     
 }
+
