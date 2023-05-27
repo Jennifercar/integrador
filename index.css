@@ -54,7 +54,7 @@ padding-left: 20px;
 }
 .menu a:hover{
 	color: #e9cada;
-	font-size: 30px;
+	
 	
 
 }
@@ -109,14 +109,8 @@ padding-left: 20px;
 	transition:all 500ms ease;
 }
 .buttonCategory:hover {
-	background-image: url(./img/prtitura.jpg);
-	background-clip: text;
-	-webkit-background-clip: text;
-	font-size: 45px;
-	border-style: none;
-	color: transparent;
 	border-radius:20px;
-	
+	font-size:22px;
 }
 .containerTitulo{
 	display: flex;
