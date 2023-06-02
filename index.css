@@ -35,13 +35,12 @@ html {
      
 }
 .menu li {
-display: inline-block;
-margin-bottom: 1rem;
-padding-left: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding-left: 20px;
   list-style: none;
   font-size: 25px;
   font-weight: 600;
-  
     
 }
 .menu a{
@@ -54,11 +53,7 @@ padding-left: 20px;
 }
 .menu a:hover{
 	color: #e9cada;
-	
-	
-
 }
-
 
 #imagendecarrucel{
 	
@@ -69,7 +64,6 @@ padding-left: 20px;
     flex-wrap: wrap;
 	background-image: url(./img/f9a98ff98167367f51f30db94eb85514.jpg);
 	
-	
 }
 
 .category{
@@ -78,7 +72,6 @@ padding-left: 20px;
 	justify-content: center;
 	align-items: center;
 	background-image: url(/img/f9a98ff98167367f51f30db94eb85514.jpg);
-	
 }
 
 .categoryUl{
@@ -91,7 +84,6 @@ padding-left: 20px;
 	font-weight: 700;
 	border-style: none;
 }
-
 
 .buttonCategory{
 
@@ -110,7 +102,7 @@ padding-left: 20px;
 }
 .buttonCategory:hover {
 	border-radius:20px;
-	font-size:22px;
+	
 }
 .containerTitulo{
 	display: flex;
@@ -122,8 +114,6 @@ padding-left: 20px;
 	color: aliceblue;
 	font-weight: 300;
 	margin: 20px;
-	
-	
 }
 .main{
 	
@@ -132,7 +122,6 @@ padding-left: 20px;
 	flex-direction: column;
 	align-items: center;
 	background-color: #051b28;
-	
 }
 
 .conteinerProduct{
@@ -142,8 +131,6 @@ padding-left: 20px;
 	flex-wrap: wrap;
 	gap:1rem;
 	border-top: 10px;
-	
-
 }
 
 .product{
@@ -152,9 +139,6 @@ padding-left: 20px;
 	border-radius: 8px;
 	margin: 30px;
 	flex-direction: row;
-	
-
-	
 }
 
 .imgProduct{
@@ -163,9 +147,6 @@ padding-left: 20px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	display: flex;
-	
-	
-	
 }
 .precio{
 	font-weight: 300;
@@ -187,22 +168,14 @@ padding-left: 20px;
 }
 .buttonAdd:hover {
 	box-shadow: 0 12px 16px 0 rgba(255, 249, 249, 0.24), 0 17px 50px 0 rgba(253, 253, 253, 0.19);
-	color: #ff008a;
-	font-size: 25px;
-	align-items: center;
   }
  
-  
-
-
 .entradas{
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	margin: 25px;
-
 }
-
 
 /**carrito de compras**/ 
 
@@ -220,8 +193,6 @@ padding-left: 20px;
     top:12vh ;
 	
  }
- 
-
   .modal-header{
 	background-color: #051b28;
 	display:flex;
@@ -241,7 +212,6 @@ padding-left: 20px;
 	cursor: pointer;
 	margin-right: 10px;
 	
-	
    }
   
    .modal-container > .modal-content{
@@ -253,9 +223,8 @@ padding-left: 20px;
 	margin: 10px;
 	gap:20px;
 	
-	
     }
-.modal-content2{
+   .modal-content2{
 	width: 95%;
 	display: flex;
 	align-items: center;
@@ -264,49 +233,48 @@ padding-left: 20px;
 	background-color: #2323234e;
 	padding: 20px;
 	border-radius: 10px;
-}
-  
 
-.restar{
+    }
+  .restar{
 	border-style: solid;
 	border-color: #e9eeed;
 	border-width: 1px;
 	border-radius: 3px;
 	padding: 2px;
 	cursor: pointer;
-}
-.sumar{
+
+   }
+  .sumar{
 	border-style: solid;
 	border-color: #e9eeed;
     border-width: 1px;
 	border-radius: 3px;
 	padding: 2px;
 	cursor: pointer;
-	}
 
-.total-content {
+	}
+   .total-content {
 	color: #000000;
 	text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px;
 	padding: 20px;
 	font-size: 25px;
 	text-align: center;
 	padding-top: 20px;
-	}
 
-.bi-x{
+	}
+   .bi-x{
 	color: #FFF;
 	background-color: #051b28;
-			
-	}
 
-.bitrash3{
+	}
+   .bitrash3{
 	color: #FFF;
 	cursor:pointer;
 	display: flex;
 	align-items: center;
-	}
 
-.buttonCompraTotal{
+	}
+   .buttonCompraTotal{
 	display: flex;
 	justify-content: center;
 	background-color: transparent;
@@ -316,47 +284,45 @@ padding-left: 20px;
 	width: 200px;
     height: 50px;
 	cursor: pointer;
-}
 
+   }
 /**footer**/
-.footer{
+   .footer{
 	background: -webkit-linear-gradient(black, #2b5a8d, #4b7d86);
 	display: flex;
 	color: #fff;
 	justify-content: space-around;
 	
-	
-
-}
-.contactos{
+   }
+  .contactos{
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	
-
-}
-.listaContacto{
+   }
+  .listaContacto{
 	list-style: none;
 	color: #fff;
-}
-.iconosRedSocial{
+   }
+
+  .iconosRedSocial{
 	color: #fff;
 	display: flex;
 	align-items: center;
 	margin: 10px;
 
-}
-.tituloRedes{
+   }
+  .tituloRedes{
 	display: flex;
 	align-items: center;
-}
-.listaRedeSociales{
+   }
+  .listaRedeSociales{
 	list-style: none;
 	display: flex;
 	gap: 20px;
 	
-}
-.botonSuscripcion{
+   }
+  .botonSuscripcion{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -368,21 +334,19 @@ padding-left: 20px;
 	background: none;
 	color: #fff;
 	margin-bottom: 15px;
-	font-size: 30px;
-	width: 300px;
+	font-size: 25px;
+	width: 250px;
     height: 38px;
 	cursor: pointer;
-	transition: all 300ms ease-out 0s;
 	
-}
-.botonSuscripcion:hover{
+  }
+  .botonSuscripcion:hover{
 	box-shadow: 0 12px 16px 0 rgba(255, 249, 249, 0.24), 0 17px 50px 0 rgba(253, 253, 253, 0.19);
 	color: #ffffff;
-	font-weight: 700;
-	align-items: center;
-}
+	
+  }
 
-@media (max-width: 1090px) {
+ @media (max-width: 1090px) {
 	.menu li {
 	  padding-left: 8px;
 	}
@@ -459,7 +423,7 @@ padding-left: 20px;
   
 	.menu a:hover {
 	  color: #e9cada;
-	  font-size: 26px;
+	 
 	}
   
 	.openMenu {
@@ -483,17 +447,24 @@ padding-left: 20px;
 	  height: 158px;
 	  transition: all 400ms ease-out 0s;
 	}
+	.buttonCategory {
+		padding: 3px;
+	  }
   
 	.footer {
 	  flex-wrap: wrap;
+	  display: flex;
+	  align-items: center;
+	  flex-direction: column;
 	}
   
 	.listaRedeSociales {
 	  justify-content: space-around;
+
 	}
   }
   
-  @media (max-width: 426px) {
+  @media (max-width: 418px) {
 	.imgLogo {
 	  width: 105px;
 	  height: 105px;
@@ -533,16 +504,9 @@ padding-left: 20px;
 	  margin: 16px;
 	}
   
-	.buttonCategory {
-	  padding: 3px;
-	}
-  
-	.buttonCategory:hover {
-	  font-size: 30px;
-	}
-  
 	.footer {
 	  flex-wrap: wrap;
+	  
 	}
   
 	.listaRedeSociales {
