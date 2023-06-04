@@ -167,7 +167,7 @@ function renderproduct(selecProduct) {
       modalContainer.append(mensajeExito);
     } else {
       const mensajeVacio = document.createElement("span");
-      mensajeVacio.textContent = "¡El carrito está vacío!";
+      mensajeVacio.textContent = "¡El carrito está vacio, hacé tu campra!";
       modalContainer.append(mensajeVacio);
     }
   });
